@@ -1,19 +1,24 @@
-<h1>Here are the 50 most recent tweets for '<%= @search_term %>'</h1>
-<%= link_to 'Back to Search', root_path %>
-<br>
-<br>
-<table>
-  <tr>
-    <th>User</th>
-    <th>Tweed</th>
-    <th>Date</th>
-  </tr>
-  <% @tweets.each do |tweet| %>
+<h1>Welcome to the Ruby Twitter Client</h1>
+<h3>In order to display the tweets of your choice, please enter a search term:</h3>
+<%= form_tag("twitter_client", method: "get") do %>
+  <%= text_field_tag "search"%>
+  <%= submit_tag "Find Tweets" %>
+<% end %>
+<% if @search_term.present? %>
+  <h3>Here are the 100 most recent tweets for '<%= @search_term %>'</h3>
+  <table>
     <tr>
-      <td><%= tweet.user.screen_name %></td>
-      <td><%= tweet.text %></td>
-      <td><%= tweet.created_at %></td>
+      <th>User</th>
+      <th>Tweed</th>
+      <th>Date</th>
     </tr>
-  <% end %>
-</table>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td><%= tweet.user.screen_name %></td>
+        <td><%= tweet.text %></td>
+        <td><%= tweet.created_at %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
 
