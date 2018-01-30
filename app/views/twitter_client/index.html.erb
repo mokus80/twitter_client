@@ -1,0 +1,19 @@
+<h1>Here are the 50 most recent tweets for '<%= @search_term %>'</h1>
+<%= link_to 'Back to Search', root_path %>
+<br>
+<br>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Tweed</th>
+    <th>Date</th>
+  </tr>
+  <% @tweets.each do |tweet| %>
+    <tr>
+      <td><%= tweet.user.screen_name %></td>
+      <td><%= tweet.text %></td>
+      <td><%= tweet.created_at %></td>
+    </tr>
+  <% end %>
+</table>
+
