@@ -1,24 +1,17 @@
-# README
+This is a simple Ruby on Rails app that consumes the Twitter API.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The user enters a search term and gets the most recent tweets for their search. For performance reasons only the last 100 tweets get displayed. 
 
-Things you may want to cover:
+Please also keep in mind that there is a request limit. Check out https://developer.twitter.com/en/docs/basics/rate-limiting for more info.
 
-* Ruby version
+The interface is kept very simple. I added some controller tests but, other than that, the awesome 'twitter' gem does a great job!
 
-* System dependencies
+Set up: 
 
-* Configuration
+Clone project and run 'bundle'
 
-* Database creation
+You need to create a .env file with your twitter credentials (see .env.example).
 
-* Database initialization
+To start the server run 'rails s' and open localhost:3000.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run the tests with 'rspec'.
