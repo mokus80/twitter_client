@@ -43,6 +43,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry'
   gem 'dotenv-rails'
+  gem 'rspec-rails'
 end
 
 group :development do
